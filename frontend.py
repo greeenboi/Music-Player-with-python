@@ -15,6 +15,10 @@ from firebase_admin import credentials
 from firebase_admin import firestore
 from firebase_admin import db
 
+from ctypes import cast, POINTER
+from comtypes import CLSCTX_ALL
+from pycaw.pycaw import AudioUtilities, IAudioEndpointVolume
+
 try:
     cred = credentials.Certificate("./music-app-ffa78-firebase-adminsdk-kmam4-ad67931c2b.json")
     firebase_admin.initialize_app(cred)
@@ -30,7 +34,13 @@ customtkinter.set_default_color_theme("purple")  # Themes: "blue" (standard), "g
 db=firestore.client()
 collection = db.collection('songlist')
 
-
+devices = AudioUtilities.GetSpeakers()
+interface = devices.Activate(
+    IAudioEndpointVolume._iid_, CLSCTX_ALL, None)
+volume = interface.QueryInterface(IAudioEndpointVolume)
+volume.GetMute()
+volume.GetMasterVolumeLevel()
+volume.GetVolumeRange()
 
 
 class App(customtkinter.CTk):
@@ -50,8 +60,7 @@ class App(customtkinter.CTk):
         # create sidebar frame with widgets
         self.sidebar_frame = customtkinter.CTkFrame(self, width=140, corner_radius=0)
         self.sidebar_frame.grid(row=0, column=0, rowspan=4, sticky="nsew")
-        self.sidebar_frame.grid_rowconfigure(4, weight=1)        
-        
+        self.sidebar_frame.grid_rowconfigure(4, weight=1)   
         
         
         self.scaling_label = customtkinter.CTkLabel(self.sidebar_frame, text="UI Scaling:", anchor="w")
@@ -67,19 +76,20 @@ class App(customtkinter.CTk):
         self.main_button_1 = customtkinter.CTkButton(master=self, fg_color="transparent", border_width=2, text_color=("gray10", "#DCE4EE"), command=self.read)
         self.main_button_1.grid(row=0, column=2, padx=(20, 20), pady=(20, 20), sticky="nsew")
 
+        
       
-        # create slider and progressbar frame
+        # create slider frame
         self.slider_progressbar_frame = customtkinter.CTkFrame(self, fg_color="transparent")
-        self.slider_progressbar_frame.grid(row=3, column=1, padx=(20, 0), pady=(20, 0), sticky="nsew")
+        self.slider_progressbar_frame.grid(row=3, column=1, columnspan=3, padx=(20, 0), pady=(20, 0), sticky="nsew")
         self.slider_progressbar_frame.grid_columnconfigure(0, weight=1)
-        self.slider_progressbar_frame.grid_rowconfigure(4, weight=1)
+        self.slider_progressbar_frame.grid_rowconfigure(4, weight=1)     
         
-       
-        self.progressbar_2 = customtkinter.CTkProgressBar(self.slider_progressbar_frame)
-        self.progressbar_2.grid(row=2, column=0 , columnspan=3, padx=(20, 10), pady=(10, 10), sticky="nsew")
+        
         self.slider_1 = customtkinter.CTkSlider(self.slider_progressbar_frame, from_=0, to=1)
-        self.slider_1.grid(row=3, column=0, columnspan=3, padx=(20, 10), pady=(10, 10), sticky="nsew")
+        self.slider_1.grid(row=3, column=0, padx=(20, 10), pady=(10, 10), sticky="nsew")   
         
+        self.slider_2 = customtkinter.CTkSlider(self.slider_progressbar_frame, from_=0, to=1, orientation="vertical", command=self.changeVol)
+        self.slider_2.grid(row=0, column=1, rowspan=3, padx=(10, 10), pady=(10, 10), sticky="ns")
         
         self.seg_button_1 = customtkinter.CTkSegmentedButton(self.slider_progressbar_frame)
         self.seg_button_1.grid(row=0, column=0,  padx=(20, 10), pady=(10, 10), sticky="ew")
@@ -87,7 +97,7 @@ class App(customtkinter.CTk):
         # set default values
              
            
-        
+        self.slider_2
         
         self.seg_button_1.configure(values=["CTkSegmentedButton", "Value 2", "Value 3"])
         self.seg_button_1.set("Value 2")
@@ -110,6 +120,16 @@ class App(customtkinter.CTk):
         docs = collection.stream()
         for doc in docs:
             print('{} => {} '.format(doc.id, doc.to_dict()))
+            
+    def changeVol(self,args):
+        volRange = volume.GetVolumeRange()
+        minVol = volRange[0]
+        maxVol = volRange[1]
+        value=self.slider_2.get()     
+        
+        currentVol=(1 - value) * minVol + value * maxVol
+        
+        volume.SetMasterVolumeLevel(currentVol, None)
 
 if __name__ == "__main__":
     app = App()
