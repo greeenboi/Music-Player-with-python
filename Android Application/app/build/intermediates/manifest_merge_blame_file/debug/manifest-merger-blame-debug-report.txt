@@ -1,0 +1,98 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.appmusicplayerapp"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="28"
+8-->C:\Users\royis\Desktop\Desktop\java_2ndyr\APPmusicplayerAPP\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="33" />
+9-->C:\Users\royis\Desktop\Desktop\java_2ndyr\APPmusicplayerAPP\app\src\main\AndroidManifest.xml
+10
+11    <permission
+11-->[androidx.core:core:1.9.0] C:\Users\royis\.gradle\caches\transforms-3\b872d90b1754fec5d715e97e0e590fb8\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+12        android:name="com.example.appmusicplayerapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+12-->[androidx.core:core:1.9.0] C:\Users\royis\.gradle\caches\transforms-3\b872d90b1754fec5d715e97e0e590fb8\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+13        android:protectionLevel="signature" />
+13-->[androidx.core:core:1.9.0] C:\Users\royis\.gradle\caches\transforms-3\b872d90b1754fec5d715e97e0e590fb8\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+14
+15    <uses-permission android:name="com.example.appmusicplayerapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+15-->[androidx.core:core:1.9.0] C:\Users\royis\.gradle\caches\transforms-3\b872d90b1754fec5d715e97e0e590fb8\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
+15-->[androidx.core:core:1.9.0] C:\Users\royis\.gradle\caches\transforms-3\b872d90b1754fec5d715e97e0e590fb8\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+16
+17    <application
+17-->C:\Users\royis\Desktop\Desktop\java_2ndyr\APPmusicplayerAPP\app\src\main\AndroidManifest.xml:5:5-28:19
+18        android:allowBackup="true"
+18-->C:\Users\royis\Desktop\Desktop\java_2ndyr\APPmusicplayerAPP\app\src\main\AndroidManifest.xml:6:13-39
+19        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+19-->[androidx.core:core:1.9.0] C:\Users\royis\.gradle\caches\transforms-3\b872d90b1754fec5d715e97e0e590fb8\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
+20        android:dataExtractionRules="@xml/data_extraction_rules"
+20-->C:\Users\royis\Desktop\Desktop\java_2ndyr\APPmusicplayerAPP\app\src\main\AndroidManifest.xml:7:13-69
+21        android:debuggable="true"
+22        android:extractNativeLibs="false"
+23        android:fullBackupContent="@xml/backup_rules"
+23-->C:\Users\royis\Desktop\Desktop\java_2ndyr\APPmusicplayerAPP\app\src\main\AndroidManifest.xml:8:13-58
+24        android:icon="@mipmap/ic_launcher"
+24-->C:\Users\royis\Desktop\Desktop\java_2ndyr\APPmusicplayerAPP\app\src\main\AndroidManifest.xml:9:13-47
+25        android:label="@string/app_name"
+25-->C:\Users\royis\Desktop\Desktop\java_2ndyr\APPmusicplayerAPP\app\src\main\AndroidManifest.xml:10:13-45
+26        android:roundIcon="@mipmap/ic_launcher_round"
+26-->C:\Users\royis\Desktop\Desktop\java_2ndyr\APPmusicplayerAPP\app\src\main\AndroidManifest.xml:11:13-58
+27        android:supportsRtl="true"
+27-->C:\Users\royis\Desktop\Desktop\java_2ndyr\APPmusicplayerAPP\app\src\main\AndroidManifest.xml:12:13-39
+28        android:testOnly="true"
+29        android:theme="@style/Theme.APPMusicPlayerAPP" >
+29-->C:\Users\royis\Desktop\Desktop\java_2ndyr\APPmusicplayerAPP\app\src\main\AndroidManifest.xml:13:13-59
+30        <activity
+30-->C:\Users\royis\Desktop\Desktop\java_2ndyr\APPmusicplayerAPP\app\src\main\AndroidManifest.xml:15:9-23:20
+31            android:name="com.example.appmusicplayerapp.MainActivity"
+31-->C:\Users\royis\Desktop\Desktop\java_2ndyr\APPmusicplayerAPP\app\src\main\AndroidManifest.xml:16:17-45
+32            android:exported="true" >
+32-->C:\Users\royis\Desktop\Desktop\java_2ndyr\APPmusicplayerAPP\app\src\main\AndroidManifest.xml:17:17-40
+33            <intent-filter>
+33-->C:\Users\royis\Desktop\Desktop\java_2ndyr\APPmusicplayerAPP\app\src\main\AndroidManifest.xml:18:13-22:29
+34                <action android:name="android.intent.action.MAIN" />
+34-->C:\Users\royis\Desktop\Desktop\java_2ndyr\APPmusicplayerAPP\app\src\main\AndroidManifest.xml:19:17-68
+34-->C:\Users\royis\Desktop\Desktop\java_2ndyr\APPmusicplayerAPP\app\src\main\AndroidManifest.xml:19:25-66
+35
+36                <category android:name="android.intent.category.LAUNCHER" />
+36-->C:\Users\royis\Desktop\Desktop\java_2ndyr\APPmusicplayerAPP\app\src\main\AndroidManifest.xml:21:17-76
+36-->C:\Users\royis\Desktop\Desktop\java_2ndyr\APPmusicplayerAPP\app\src\main\AndroidManifest.xml:21:27-74
+37            </intent-filter>
+38        </activity>
+39        <activity android:name="com.example.appmusicplayerapp.musicplayer" />
+39-->C:\Users\royis\Desktop\Desktop\java_2ndyr\APPmusicplayerAPP\app\src\main\AndroidManifest.xml:24:9-25:46
+39-->C:\Users\royis\Desktop\Desktop\java_2ndyr\APPmusicplayerAPP\app\src\main\AndroidManifest.xml:25:17-44
+40
+41        <meta-data
+41-->C:\Users\royis\Desktop\Desktop\java_2ndyr\APPmusicplayerAPP\app\src\main\AndroidManifest.xml:26:9-94
+42            android:name="preloaded_fonts"
+42-->C:\Users\royis\Desktop\Desktop\java_2ndyr\APPmusicplayerAPP\app\src\main\AndroidManifest.xml:26:20-50
+43            android:resource="@array/preloaded_fonts" />
+43-->C:\Users\royis\Desktop\Desktop\java_2ndyr\APPmusicplayerAPP\app\src\main\AndroidManifest.xml:26:51-92
+44
+45        <provider
+45-->[androidx.emoji2:emoji2:1.2.0] C:\Users\royis\.gradle\caches\transforms-3\8eb335c4f8c7c4618fd11f8ee123fb9e\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+46            android:name="androidx.startup.InitializationProvider"
+46-->[androidx.emoji2:emoji2:1.2.0] C:\Users\royis\.gradle\caches\transforms-3\8eb335c4f8c7c4618fd11f8ee123fb9e\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
+47            android:authorities="com.example.appmusicplayerapp.androidx-startup"
+47-->[androidx.emoji2:emoji2:1.2.0] C:\Users\royis\.gradle\caches\transforms-3\8eb335c4f8c7c4618fd11f8ee123fb9e\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
+48            android:exported="false" >
+48-->[androidx.emoji2:emoji2:1.2.0] C:\Users\royis\.gradle\caches\transforms-3\8eb335c4f8c7c4618fd11f8ee123fb9e\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
+49            <meta-data
+49-->[androidx.emoji2:emoji2:1.2.0] C:\Users\royis\.gradle\caches\transforms-3\8eb335c4f8c7c4618fd11f8ee123fb9e\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+50                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+50-->[androidx.emoji2:emoji2:1.2.0] C:\Users\royis\.gradle\caches\transforms-3\8eb335c4f8c7c4618fd11f8ee123fb9e\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
+51                android:value="androidx.startup" />
+51-->[androidx.emoji2:emoji2:1.2.0] C:\Users\royis\.gradle\caches\transforms-3\8eb335c4f8c7c4618fd11f8ee123fb9e\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
+52            <meta-data
+52-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\royis\.gradle\caches\transforms-3\8ab73465dfe5f424e5c763bf782eb785\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+53                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+53-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\royis\.gradle\caches\transforms-3\8ab73465dfe5f424e5c763bf782eb785\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+54                android:value="androidx.startup" />
+54-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\royis\.gradle\caches\transforms-3\8ab73465dfe5f424e5c763bf782eb785\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+55        </provider>
+56    </application>
+57
+58</manifest>
