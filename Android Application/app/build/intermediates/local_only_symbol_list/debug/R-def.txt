@@ -1,0 +1,36 @@
+R_DEF: Internal format may change without notice
+local
+array com_google_android_gms_fonts_certs
+array com_google_android_gms_fonts_certs_dev
+array com_google_android_gms_fonts_certs_prod
+array preloaded_fonts
+color TimelineGray
+color TitleGreen
+color black
+color white
+drawable group_1
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+drawable playernextbut
+drawable playerprevbut
+drawable playertimescrollbarbg
+font jetbrains_mono
+id PlayerEndTime
+id PlayerNextBut
+id PlayerPlayButton
+id PlayerPrevBut
+id PlayerSongSubtitle
+id PlayerSongTitle
+id PlayerStartTime
+id imageView
+id seekBar
+id start_button
+layout activity_main
+layout activity_musicplayer
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+style Base.Theme.APPMusicPlayerAPP
+style Theme.APPMusicPlayerAPP
+xml backup_rules
+xml data_extraction_rules
